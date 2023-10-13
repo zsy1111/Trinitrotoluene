@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Trinitrotoluene</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div>
+   
+    <!-- <img class="img-fluid" src="argon.png" alt="New York" style="position: fixed;"> -->
+    <div class="btn-group-vertical">
+      <div class="btn-group">
+          <button type="button" class="btn  argon1" style="background-image: url(1.jpg);"></button>
+          <button type="button" class="btn  argon1" style="background-image: url(2.jpg);"></button>
+          <button type="button" class="btn  argon1" style="background-image: url(3.jpg);"></button>
+          <button type="button" class="btn  argon1" style="background-image: url(4.jpg);"></button>
+        </div> 
+        <div class="btn-group"> 
+          <button type="button" class="btn  argon2" style="background-image: url(5.jpg);" onclick='VoiceAnnouncements("受热、接触明火或受到摩擦、震动、撞击时可发生爆炸少量或者薄层物料在广阔的空间中燃烧可不起爆，大量堆积或在密闭容器中燃烧有可能由燃烧转为爆轰。遇碱生成不安定的爆炸物。该物质不导电，在粉碎时易产生静电积累。");'></button>
+          <button type="button" class="btn  argon2" style="background-image: url(6.jpg);" onclick='VoiceAnnouncements("急性中毒:短期大量皮肤接触、吸入、口服者，可出现高铁血红蛋白血症;肝脏损害较明显严重者可发生亚急性肝坏死。慢性中毒:长期接触 皮肤接触、吸入 可发生中毒性肝病，重者有肝硬变;中毒性白内障。患者常伴有神经衰弱综合征以及消化系统症状，偶有贫血、血细胞减少或肾损害。长期接触可出现“TNT”面容:面部苍白，口唇、耳廓紫绀等。")'></button>
+          <button type="button" class="btn  argon2" style="background-image: url(7.jpg);" onclick='VoiceAnnouncements("储存于阴凉、干燥、通风的专用爆炸品库房。远离火种、热源，库温不超过三十度，相对湿度不超过百分之八十。应与氧化剂、还原剂、酸类、碱类、食用化学品分开存放，切忌混储。采用防爆型照明、通风设施，禁止使用易产生火花的机械设备和工具。储区应备有合适的材料收容泄漏物。禁止震动、撞击和摩擦。")'></button>
+          <button type="button" class="btn  argon2" style="background-image: url(8.jpg);" onclick='VoiceAnnouncements("消防人员须在有防爆掩蔽处操作。遇大火切记轻易靠近，用大量水灭火。在物料附近失火须用水保持容器冷却禁止用砂土压盖。")'></button>
+        </div> 
+        <div class="btn-group"> 
+          <button type="button" class="btn  argon3" style="background-image: url(10.jpg);" onclick='VoiceAnnouncements("隔离泄漏污染区，限制出入，切断火源。建议应急处理人员戴防尘面具 (全面罩)，穿防毒服。不要直接接触泄漏物，避免震动、撞击和摩擦。小量泄漏:使用无火花工具收集于干燥、洁净、有盖的容器中，转移至安全场所。大量泄漏:用水润湿，然后收集回收或运至废物处场所处置。")'></button>
+          <button type="button" class="btn  argon3" style="background-image: url(11.jpg);" onclick='VoiceAnnouncements("皮肤接触:脱去污染的衣着，用肥皂水和大量流动清水彻底冲洗，就医。眼睛接触:立即翻开上下眼睑，用流动清水或生理盐水冲洗，就医。吸入:迅速脱离现场至空气新鲜处，保持呼吸道顺畅。如呼吸困难给输氧，如呼吸停止立即进行人工呼吸，就医。食入:饮足量温水，催吐，洗胃，导泻，就医。")'></button>
+        </div> 
+        <div class="btn-group"> 
+          <button type="button" class="btn  argon4" style="background-image: url(9.jpg);" ></button>
+        </div> 
+  </div> 
+  </div>
+   
+    
+
+</body>
+<style>
+  
+  .bak{
+      position: absolute;
+  }
+  .argon1{
+   
+   padding-right: 615%;
+   padding-top: 405%;
+   background-color: rgba(0, 0, 0, 0.342);
+   
+  }
+  .argon2{
+     
+     padding-right: 615%;
+     padding-top: 505%;
+     background-color: rgba(0, 0, 0, 0.342); 
+    }
+    .argon3{
+     
+     padding-right: 1254%;
+     padding-top: 379%;
+     background-color: rgba(0, 0, 0, 0.342); 
+    }
+    .argon4{
+     
+     padding-right: 2533%;
+     padding-top: 181%;
+     background-color: rgba(209, 34, 34, 0); 
+    }
+  .bak1{
+      display: block;
+  }
+   
+ 
+</style>
+<script>
+			
+  var tape = null;//声明一个参数方便可以对当前播放的语音进行暂停，继续播放等操作。
+  function VoiceAnnouncements(text) {
+    if (tape != null) {//防止用户多次点击播放语音播放重复，如果当前语音正在播放则再点击播放时会先判断然后暂停当前播放的音频重新播放
+      if (!tape.paused) {
+        tape.pause();
+      }
+    }
+    
+    var url = "https://dict.youdao.com/dictvoice?audio="+text+"&le=zh"
+    var audio = new Audio(url);
+    tape = audio;
+    audio.src = url;
+    audio.play();//播放音频
+  };
+
+</script>
+
+</html>
